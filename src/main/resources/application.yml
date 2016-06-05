@@ -1,0 +1,48 @@
+spring:
+    profiles.active: db-rds
+
+
+---
+
+
+spring:
+    profiles: db-rds
+    datasource:
+        url: jdbc:mysql://fincil.cf1qujmzb7k0.ap-northeast-2.rds.amazonaws.com:3306/fincil?useUnicode=true&charaterEncoding=utf-8&charSet=utf-8&useLegacyDatetimeCode=false&serverTimezone=Asia/Seoul&useSSL=false&connectTimeout=60000&socketTimeout=60000
+        driverClassName: com.mysql.cj.jdbc.Driver
+        username: wooklym
+        password: fincil1!
+        max-active: 30
+        max-idle: 10
+        min-idle: 5
+        test-while-idle: true
+        test-on-borrow: true
+        validation-query: SELECT 1
+        time-between-eviction-runs-millis: 5000
+        min-evictable-idle-time-millis: 60000
+    jpa:
+        hibernate.ddl-auto: create-drop
+        generate-ddl: false
+    jackson:
+        time-zone: Asia/Seoul
+server:
+    port: 8080
+
+
+---
+
+
+spring:
+    profiles: db-h2
+    datasource:
+        url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+        driverClassName: org.h2.Driver
+        username: sa
+        password:
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+    jackson:
+        time-zone: Asia/Seoul
+debug: true
+server:
+    port: 8080

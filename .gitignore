@@ -33,3 +33,7 @@ local.properties
 ### Gradle template
 .gradle
 build/
+
+
+# application setting
+resources/application.yml
