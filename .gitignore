@@ -10,6 +10,7 @@ tmp/
 local.properties
 .settings/
 .loadpath
+*.MF
 
 # Eclipse Core
 .project
