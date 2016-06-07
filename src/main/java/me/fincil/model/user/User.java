@@ -11,9 +11,8 @@ import javax.persistence.InheritanceType;
  * Created by HSWook on 2016. 5. 9..
  */
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Data
-public abstract class User extends Model {
+public class User extends Model {
     private String email;
     private String name;
     private String pw;
