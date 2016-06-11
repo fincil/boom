@@ -1,7 +1,7 @@
 package me.fincil.controller;
 
 import me.fincil.model.user.User;
-import me.fincil.service.CommonService;
+import me.fincil.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,11 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class ApiController {
 
   @Autowired
-  CommonService<User> userCommonService;
+  UserService userService;
+
 
   @RequestMapping("/users")
   public Iterable<User> allUser() {
-    return userCommonService.findAll();
+    return userService.findAll();
   }
 
 }
