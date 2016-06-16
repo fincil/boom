@@ -18,4 +18,20 @@ public class Book extends Model {
 	
 	@OneToMany
 	private Set<Paper> papers;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Set<Paper> getPapers() {
+		return papers;
+	}
+
+	public void setPapers(Set<Paper> papers) {
+		this.papers = papers;
+	}
 }
