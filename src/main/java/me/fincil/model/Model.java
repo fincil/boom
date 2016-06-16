@@ -10,7 +10,6 @@ import java.util.Date;
  * Created by HSWook on 2016. 5. 9..
  */
 @MappedSuperclass
-@Data
 public abstract class Model {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

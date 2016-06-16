@@ -11,7 +11,6 @@ import lombok.Data;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@Data
 public class Book extends Model {
 
 	private String name;

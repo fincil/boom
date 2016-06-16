@@ -13,7 +13,6 @@ import me.fincil.model.user.User;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@Data
 public class Paper extends Model {
 
 	private String name;
