@@ -1,7 +1,6 @@
 package me.fincil.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -11,7 +10,6 @@ import java.util.Set;
  */
 
 @MappedSuperclass
-@Data
 public abstract class TreeModel<T> extends Model {
 
     private static final long serialVersionUID = 1L;
@@ -26,4 +24,36 @@ public abstract class TreeModel<T> extends Model {
     @ManyToOne
     @JoinColumn(name = "PARENT_UID")
     private T parent;
+
+	public long getLevel() {
+		return level;
+	}
+
+	public void setLevel(long level) {
+		this.level = level;
+	}
+
+	public long getSequence() {
+		return sequence;
+	}
+
+	public void setSequence(long sequence) {
+		this.sequence = sequence;
+	}
+
+	public Set<T> getChilds() {
+		return childs;
+	}
+
+	public void setChilds(Set<T> childs) {
+		this.childs = childs;
+	}
+
+	public T getParent() {
+		return parent;
+	}
+
+	public void setParent(T parent) {
+		this.parent = parent;
+	}
 }

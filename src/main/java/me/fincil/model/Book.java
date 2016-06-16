@@ -7,8 +7,6 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 
-import lombok.Data;
-
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Book extends Model {

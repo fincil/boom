@@ -8,7 +8,6 @@ import javax.persistence.InheritanceType;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
-import lombok.Data;
 import me.fincil.model.user.User;
 
 @Entity
