@@ -12,6 +12,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import me.fincil.model.Book;
 import me.fincil.model.Model;
 import me.fincil.model.Room;
+import me.fincil.model.type.BookType;
+import me.fincil.model.type.RoomType;
 
 /**
  * Created by HSWook on 2016. 5. 9..
@@ -41,7 +43,11 @@ public class User extends Model {
     @PrePersist
     public void onCreate() {
         Room room = new Room();
+        room.setName("my");
+        room.setType(RoomType.Private);
         Book book = new Book();
+        book.setName("draft");
+        book.setType(BookType.Draft);
         room.getBooks().add(book);
         rooms.add(room);
         
