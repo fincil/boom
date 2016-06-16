@@ -12,4 +12,14 @@ import javax.transaction.Transactional;
 @Service
 @Transactional
 public class UserService extends ModelService<User> {
+	
+	@Override
+	public User save(User entity) {
+		return super.save(entity);
+		//init
+		//Room room = new Room(RoomType.Private)
+		//Shelf shelf = new Shelf(ShelfType.Basic)
+		//Book book = new Book(BookType.Draft)
+		//room.add(shelf.add(book)));
+	}
 }

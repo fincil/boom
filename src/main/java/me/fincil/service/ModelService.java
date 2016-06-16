@@ -15,6 +15,10 @@ public abstract class ModelService<T extends Model> {
   @Autowired
   ModelRepository<T> repository;
 
+  public T save(T entity) {
+	  return repository.save(entity);
+  }
+  
   public Iterable<T> findAll() {
     return repository.findAll();
   }
