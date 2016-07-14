@@ -3,11 +3,13 @@ package me.fincil.model;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+import me.fincil.model.type.PaperType;
 import me.fincil.model.user.User;
 
 @Entity
@@ -15,6 +17,8 @@ import me.fincil.model.user.User;
 public class Paper extends Model {
 
 	private String name;
+	@Enumerated
+	private PaperType type;
 	
 	@ManyToOne
 	private User owner;
@@ -28,6 +32,14 @@ public class Paper extends Model {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public PaperType getType() {
+		return type;
+	}
+
+	public void setType(PaperType type) {
+		this.type = type;
 	}
 
 	public User getOwner() {

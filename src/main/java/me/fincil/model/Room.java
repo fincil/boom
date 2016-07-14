@@ -3,6 +3,7 @@ package me.fincil.model;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToMany;
@@ -15,6 +16,7 @@ import me.fincil.model.user.User;
 public class Room extends Model {
 
 	private String name;
+	@Enumerated
 	private RoomType type;
 	
 	@ManyToMany
